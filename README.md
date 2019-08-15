@@ -1,5 +1,3 @@
-<script src="https://github.com/adrai/flowchart.js/blob/master/release/flowchart.min.js"></script>
-
 ## 虚拟 DOM 与 diff 算法的介绍与实现
 
 ```
