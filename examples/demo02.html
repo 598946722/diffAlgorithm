@@ -12,6 +12,7 @@
       }
     </style>
   </head>
+
   <body></body>
 </html>
 <script>
@@ -19,24 +20,10 @@
     constructor({ el = "body", children = {} }) {
       let root = document.querySelector(el);
       root.innerHTML = "";
-      dealDom(children, root);
-
-      function dealDom(children, root) {
-        for (let [key, value] of Object.entries(children)) {
-          let createEl = document.createElement(key);
-          if (typeof value == "string") {
-            createEl.innerText = value;
-          } else {
-            if (value instanceof Array) {
-              for (let i = 0; i < value.length; i++) {
-                dealDom(value[i], createEl);
-              }
-            } else {
-              dealDom(value, createEl);
-            }
-          }
-          root.appendChild(createEl);
-        }
+      for (let [key, value] of Object.entries(children)) {
+        let createEl = document.createElement(key);
+        createEl.innerText = value;
+        root.appendChild(createEl);
       }
     }
   }
@@ -45,23 +32,7 @@
     el: "body",
     children: {
       h1: "Hello World !",
-      div: {
-        div: "test deeeeeeeeeep !"
-      },
-      ol: [
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" },
-        { li: "测试一下哈哈哈哈哈哈01" }
-      ]
+      div: "哈哈哈哈"
     }
   });
 </script>
