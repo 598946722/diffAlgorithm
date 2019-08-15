@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      h1 {
+        font-size: 100px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+<script>
+  class Component {
+    constructor({ el = "body", children = {} }) {
+      let root = document.querySelector(el);
+      root.innerHTML = "";
+      for (let [key, value] of Object.entries(children)) {
+        let createEl = document.createElement(key);
+        createEl.innerText = value;
+        root.appendChild(createEl);
+      }
+    }
+  }
+
+  new Component({
+    el: "body",
+    children: {
+      h1: "Hello World !"
+    }
+  });
+</script>
