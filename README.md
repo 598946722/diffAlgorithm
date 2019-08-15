@@ -14,14 +14,21 @@ SPA的主要特点在于“虚拟DOM”，至于什么是虚拟DOM，下文会�
 
 ### 创建一个暴力更新的虚拟 DOM
 
-1. [浅拷贝暴力更新](./examples/demo01.html)
+1. [浅拷贝单节点暴力更新](./examples/demo01.html)
 
 ```
 该示例根据一定的数据格式实现JS渲染生成真实的 HTML DOM,
 通过JS浅拷贝实现单层HTML渲染。
 ```
 
-2. [深拷贝暴力更新](./examples/demo01.html)
+1. [浅拷贝单层多节点暴力更新](./examples/demo02.html)
+
+```
+该示例根据一定的数据格式实现JS渲染生成真实的 HTML DOM,
+通过JS浅拷贝实现单层HTML渲染。
+```
+
+2. [深拷贝多层多节点暴力更新](./examples/demo03.html)
 
 ```
 该示例根据一定的数据格式实现JS渲染生成真实的 HTML DOM,
