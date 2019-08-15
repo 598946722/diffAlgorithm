@@ -11,7 +11,8 @@ SPA的主要特点在于“虚拟DOM”，至于什么是虚拟DOM，下文会�
 1. [浅拷贝暴力更新](./examples/demo01.html)
 
 ```seq
-div -> div```
+div -> div
+```
 
 ```
 该示例根据一定的数据格式实现JS渲染生成真实的 HTML DOM,
