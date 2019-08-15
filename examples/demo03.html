@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      h1 {
+        font-size: 100px;
+        color: red;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+<script>
+  class Component {
+    constructor({ el = "body", children = {} }) {
+      let root = document.querySelector(el);
+      root.innerHTML = "";
+      dealDom(children, root);
+
+      function dealDom(children, root) {
+        for (let [key, value] of Object.entries(children)) {
+          let createEl = document.createElement(key);
+          if (typeof value == "string") {
+            createEl.innerText = value;
+          } else {
+            if (value instanceof Array) {
+              for (let i = 0; i < value.length; i++) {
+                dealDom(value[i], createEl);
+              }
+            } else {
+              dealDom(value, createEl);
+            }
+          }
+          root.appendChild(createEl);
+        }
+      }
+    }
+  }
+
+  new Component({
+    el: "body",
+    children: {
+      h1: "Hello World !",
+      div: {
+        div: "test deeeeeeeeeep !"
+      },
+      ol: [
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" },
+        { li: "测试一下哈哈哈哈哈哈01" }
+      ]
+    }
+  });
+</script>
