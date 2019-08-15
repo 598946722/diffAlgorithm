@@ -15,22 +15,5 @@
   <body></body>
 </html>
 <script>
-  class Component {
-    constructor({ el = "body", children = {} }) {
-      let root = document.querySelector(el);
-      root.innerHTML = "";
-      for (let [key, value] of Object.entries(children)) {
-        let createEl = document.createElement(key);
-        createEl.innerText = value;
-        root.appendChild(createEl);
-      }
-    }
-  }
-
-  new Component({
-    el: "body",
-    children: {
-      h1: "Hello World !"
-    }
-  });
+  document.querySelector("body").innerHTML = "<h1>Hello World ！</h1>";
 </script>
